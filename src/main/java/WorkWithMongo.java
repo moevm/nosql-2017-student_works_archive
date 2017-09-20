@@ -20,7 +20,8 @@ public class WorkWithMongo {
 
     // И класс который обеспечит возможность работать
 // с коллекциями / таблицами MongoDB
-    private DBCollection table;
+    private DBCollection tableStud;
+    private DBCollection tableArchive;
 
     public WorkWithMongo(Properties prop) throws UnknownHostException {
         try {
@@ -34,7 +35,8 @@ public class WorkWithMongo {
             authenticate = db.authenticate(prop.getProperty("login"), prop.getProperty("password").toCharArray());
 
             // Выбираем коллекцию/таблицу для дальнейшей работы
-            table = db.getCollection(prop.getProperty("table"));
+            tableStud = db.getCollection(prop.getProperty("studentsTable"));
+            tableArchive = db.getCollection(prop.getProperty("archiveTable"));
         } catch (UnknownHostException e) {
             // Если возникли проблемы при подключении сообщаем об этом
             System.err.println("Don't connect!");
@@ -43,58 +45,68 @@ public class WorkWithMongo {
 
 
 
-    public void add(User user){
+    public void addStudent(Student student){
         BasicDBObject document = new BasicDBObject();
 
         // указываем поле с объекта User
         // это поле будет записываться в коллекцию/таблицу
-        document.put("login", user.getLogin());
+        document.put("studentID", student.getStudentID());
+        document.put("name", student.getName());
+        document.put("surname", student.getSurname());
+        document.put("group", student.getGroup());
 
         // записываем данные в коллекцию/таблицу
-        table.insert(document);
+        tableStud.insert(document);
     }
 
-    public User getByLogin(String login){
+    public Student getStudentByStudentID(String studentID){
         BasicDBObject query = new BasicDBObject();
 
         // задаем поле и значение поля по которому будем искать
-        query.put("login", login);
+        query.put("studentID", studentID);
 
         // осуществляем поиск
-        DBObject result = table.findOne(query);
+        DBObject result = tableStud.findOne(query);
 
         // Заполняем сущность полученными данными с коллекции
-        User user = new User();
-        user.setLogin(String.valueOf(result.get("login")));
-        user.setId(String.valueOf(result.get("_id")));
+        Student student = new Student();
+        student.setStudentID(String.valueOf(result.get("studentID")));
+        student.setId(String.valueOf(result.get("_id")));
+        student.setName(String.valueOf("name"));
+        student.setSurname(String.valueOf("surname"));
+        student.setGroup(String.valueOf("group"));
 
         // возвращаем полученного пользователя
-        return user;
+        return student;
     }
 
     // login - это старый логин пользователя
 // newLogin - это новый логин который мы хотим задать
-    public void updateByLogin(String login, String newLogin){
+    /*public void updateStudentByStudentID(String studentID, Student newStudent){
         BasicDBObject newData = new BasicDBObject();
 
         // задаем новый логин
-        newData.put("login", newLogin);
+        newData.put("studentID", newStudent.getStudentID());
 
         // указываем обновляемое поле и текущее его значение
-        BasicDBObject searchQuery = new BasicDBObject().append("login", login);
+        BasicDBObject searchQuery = new BasicDBObject().append("studentID", studentID);
 
         // обновляем запись
-        table.update(searchQuery, newData);
-    }
+        tableStud.update(searchQuery, newData);
 
-    public void deleteByLogin(String login){
+        newData.put("name", newStudent.getName());
+        newData.put("surname", newStudent.getSurname());
+        newData.put("group", newStudent.getGroup());
+    }*/
+
+    public void deleteByStudentID(String studentID){
         BasicDBObject query = new BasicDBObject();
 
         // указываем какую запись будем удалять с коллекции
         // задав поле и его текущее значение
-        query.put("login", login);
+        query.put("studentID", studentID);
 
         // удаляем запись с коллекции/таблицы
-        table.remove(query);
+        tableStud.remove(query);
     }
 }
