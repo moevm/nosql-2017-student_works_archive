@@ -1,0 +1,69 @@
+Files
+[
+  {
+		"id"=id;
+		"name"=name;
+		"grade"=grade;
+		"date"=date;
+		"file"=file;
+	},...,
+]
+Groups
+[
+	{
+		"№group"=№group;
+		"faculty"=faculty;?
+		"students"=[
+                  {
+                    "id"=id; //номер студенческого
+                    "FIO"=FIO;
+                    "year"= year;
+                    "documents"=[
+                                  {
+                                    "subject"=subject;
+                                    "labs"={id_file1,id_file2,...}
+                                  },...,
+
+                                ]
+
+                  },...,	
+					     ]
+	},...,
+]
+Teachers
+[
+	{
+		"id"=id;
+		"FIO"=FIO;
+		"subjects"=[
+                {
+                  "subject"=subject;
+                  "students"=[
+                              {
+                                "id"=id; //номер студенческого
+                                "FIO"=FIO;
+                                "year"= year;
+                                "group"=group;
+                                "labs"={id_file1,id_file2,...};	
+                              },...,	
+                            ]
+                },...,
+					    ]
+	},...,
+]
+Subjects
+[
+	{
+		"subject"=subject;
+		"FIO_teacher"=FIO_teacher;
+		"students"=[
+                {
+                  "id"=id; //номер студенческого
+                  "FIO"=FIO;
+                  "year"= year;
+                  "group"=group;
+                  "labs"={id_file1,id_file2,...};	
+                },...,	
+              ]
+	},...,
+]
