@@ -38,6 +38,7 @@ Teachers
 		"subjects"=[
                 {
                   "subject"=subject;
+		  "groups"={id_group1,id_group2,...};	
                   "students"=[
                               {
                                 "id"=id; //номер студенческого
@@ -56,6 +57,7 @@ Subjects
 	{
 		"subject"=subject;
 		"FIO_teacher"=FIO_teacher;
+		"groups"={id_group1,id_group2,...};	
 		"students"=[
                 {
                   "id"=id; //номер студенческого
