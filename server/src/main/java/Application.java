@@ -1,7 +1,13 @@
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
 import java.net.UnknownHostException;
 import java.util.Properties;
 
-public class Application {
+
+
+@SpringBootApplication
+public class Application  extends WebMvcConfigurerAdapter{
 
     public static void main(String[] args) throws UnknownHostException {
         Properties prop = new Properties();
