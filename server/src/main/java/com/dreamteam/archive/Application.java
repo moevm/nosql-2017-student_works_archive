@@ -1,10 +1,10 @@
+package com.dreamteam.archive;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.net.UnknownHostException;
-import java.util.Properties;
-
 
 
 @SpringBootApplication
@@ -21,7 +21,7 @@ public class Application  extends WebMvcConfigurerAdapter{
 //        prop.setProperty("studentsTable", "students");
 //        prop.setProperty("archiveTable", "archive");
 //        WorkWithMongo mongo = new WorkWithMongo(prop);
-//        Student student = new Student("4381","Ivan","Petrov","1321");
+//        com.dreamteam.archive.model.Student student = new com.dreamteam.archive.model.Student("4381","Ivan","Petrov","1321");
 //        System.out.println(student);
 //        mongo.addStudent(student);
 //        System.out.println(mongo.getStudentByStudentID("4381"));

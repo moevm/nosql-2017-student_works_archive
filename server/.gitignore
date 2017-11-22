@@ -20,6 +20,6 @@ gradlew*
 *.ear
 
 
-*.xml
 *.html
+*.xml
 *.iml
