@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="595a1768-8b0b-41cd-a909-3a05517f78c8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/Application.java" afterPath="$PROJECT_DIR$/server/src/main/java/Application.java" />
     </list>
     <ignored path="nosql-2017-student_works_archive.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/server/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -672,7 +670,7 @@
       <workItem from="1508185761067" duration="724000" />
       <workItem from="1510765758116" duration="2346000" />
       <workItem from="1511300436109" duration="1271000" />
-      <workItem from="1511374754995" duration="2155000" />
+      <workItem from="1511374754995" duration="2233000" />
     </task>
     <task id="LOCAL-00001" summary="Spring is here!">
       <created>1511375293373</created>
@@ -681,11 +679,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511375293373</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Spring is here!">
+      <created>1511376921396</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1511376921396</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9278000" />
+    <option name="totallyTimeSpent" value="9356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="6" width="1303" height="780" extended-state="6" />
@@ -925,7 +930,7 @@
     <entry file="file://$PROJECT_DIR$/server/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
           <folding />
         </state>
       </provider>
