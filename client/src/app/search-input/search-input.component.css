@@ -1,0 +1,11 @@
+.my-group .form-control{
+  margin: 0;
+  padding: 0;
+}
+
+.my-group .input-search{
+  width: 70%;
+}
+.my-group .select-search{
+  width: 30%;
+}
