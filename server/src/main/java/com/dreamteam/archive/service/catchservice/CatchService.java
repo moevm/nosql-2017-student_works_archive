@@ -6,4 +6,12 @@ import java.util.List;
 
 public interface CatchService {
     public List<Archive> getByGrade(String grade);
+    public List<Archive> getByTitle(String title);
+    public List<Archive> getBySubject(String subject);
+    public List<Archive> getByTeacgerName(String teacgerName);
+    public List<Archive> getByStudentId(String studentId);
+    public List<Archive> getByStudentName(String studentName);
+    public List<Archive> getByGroup(String group);
+    public List<Archive> getByDate(String date);
+
 }
