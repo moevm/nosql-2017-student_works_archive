@@ -23,7 +23,7 @@ public class CatchServiceImpl implements CatchService {
     @Override
     public List<Archive> getBySubject(String subject){return catchRepository.findBySubject(subject);}
     @Override
-    public List<Archive> getByTeacgerName(String teacgerName){return catchRepository.findByTeacgerName(teacgerName);}
+    public List<Archive> getByTeacherName(String teacherName){return catchRepository.findByTeacherName(teacherName);}
     @Override
     public List<Archive> getByStudentId(String studentId){return catchRepository.findByStudentId(studentId);}
     @Override

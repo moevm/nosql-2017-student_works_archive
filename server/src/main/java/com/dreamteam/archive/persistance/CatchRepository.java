@@ -12,7 +12,7 @@ public interface CatchRepository extends MongoRepository<Archive, String>{
     List<Archive> findByGrade(int grade);
     List<Archive> findByTitle(String title);
     List<Archive> findBySubject(String subject);
-    List<Archive> findByTeacgerName(String teacgerName);
+    List<Archive> findByTeacherName(String teacherName);
     List<Archive> findByStudentId(String studentId);
     List<Archive> findByStudentName(String studentName);
     List<Archive> findByGroup(String group);

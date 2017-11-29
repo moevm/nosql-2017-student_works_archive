@@ -9,10 +9,8 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Document(collection = "Archive")
 @JsonSerialize
@@ -23,7 +21,7 @@ public class Archive implements Serializable{
     private String title;
     private String subject;
     private int grade;
-    private String teacgerName;
+    private String teacherName;
     private String studentId;
     private String studentName;
     private String group;
@@ -34,11 +32,11 @@ public class Archive implements Serializable{
     private LocalDateTime date;
     Archive(){}
 
-    Archive(String title, String subject, int grade,LocalDateTime date, String teatcherName, String studentId, String studentName, String group, String file){
+    Archive(String title, String subject, int grade,LocalDateTime date, String teacherName, String studentId, String studentName, String group, String file){
         this.title=title;
         this.subject=subject;
         this.grade=grade;
-        this.teacgerName=teatcherName;
+        this.teacherName=teacherName;
         this.studentId=studentId;
         this.studentName=studentName;
         this.group=group;
@@ -71,12 +69,12 @@ public class Archive implements Serializable{
         this.grade = grade;
     }
 
-    public String getTeacgerName() {
-        return teacgerName;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setTeacgerName(String teacgerName) {
-        this.teacgerName = teacgerName;
+    public void setTecherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 
     public String getStudentId() {

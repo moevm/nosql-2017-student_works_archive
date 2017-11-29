@@ -27,5 +27,40 @@ public class CatchController {
     public ResponseEntity<?> getQuery(@RequestParam("grade")String grade){
         return new ResponseEntity<List<Archive>>(catchService.getByGrade(grade), HttpStatus.OK);
     }
+    @GetMapping
+    @RequestMapping
+    public ResponseEntity<?> getQueryTitle(@RequestParam("title")String title){
+        return new ResponseEntity<List<Archive>>(catchService.getByTitle(title), HttpStatus.OK);
+    }
+    @GetMapping
+    @RequestMapping
+    public ResponseEntity<?> getQueryDate(@RequestParam("date")String date){
+        return new ResponseEntity<List<Archive>>(catchService.getByDate(date), HttpStatus.OK);
+    }
+    @GetMapping
+    @RequestMapping
+    public ResponseEntity<?> getQueryStudentId(@RequestParam("studentId")String studentId){
+        return new ResponseEntity<List<Archive>>(catchService.getByStudentId(studentId), HttpStatus.OK);
+    }
 
+    @GetMapping
+    @RequestMapping
+    public ResponseEntity<?> getQuerySubject(@RequestParam("subject")String subject){
+        return new ResponseEntity<List<Archive>>(catchService.getBySubject(subject), HttpStatus.OK);
+    }
+    @GetMapping
+    @RequestMapping
+    public ResponseEntity<?> getQueryTeacherName(@RequestParam("teacherName")String teacherName){
+        return new ResponseEntity<List<Archive>>(catchService.getByTeacherName(teacherName), HttpStatus.OK);
+    }
+    @GetMapping
+    @RequestMapping
+    public ResponseEntity<?> getQueryStudentName(@RequestParam("studentName")String studentName){
+        return new ResponseEntity<List<Archive>>(catchService.getByStudentName(studentName), HttpStatus.OK);
+    }
+    @GetMapping
+    @RequestMapping
+    public ResponseEntity<?> getQueryGroup(@RequestParam("group")String group){
+        return new ResponseEntity<List<Archive>>(catchService.getByGroup(group), HttpStatus.OK);
+    }
 }
