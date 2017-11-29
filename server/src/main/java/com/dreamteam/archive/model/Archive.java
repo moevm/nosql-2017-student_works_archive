@@ -73,7 +73,7 @@ public class Archive implements Serializable{
         return teacherName;
     }
 
-    public void setTecherName(String teacherName) {
+    public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
     }
 
