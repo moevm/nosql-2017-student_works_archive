@@ -24,3 +24,5 @@ gradlew*
 *.html
 *.xml
 *.iml
+
+client/node_modules

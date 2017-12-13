@@ -1,4 +1,4 @@
-export interface Archive {
+export class Archive {
   id: string;
   title: string;
   subject: string;
@@ -8,5 +8,5 @@ export interface Archive {
   studentName: string;
   group: string;
   file: string;
-  LocalDateTime: string;
+  date: string;
 }

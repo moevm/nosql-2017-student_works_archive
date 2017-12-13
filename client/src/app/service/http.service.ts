@@ -7,7 +7,8 @@ export class HttpService {
   constructor(private http: Http) {
   }
 
-  getData(url: string, params: any) {
+
+  getData(url: string, params: string) {
     return this.http.get(url, {params});
   }
 }

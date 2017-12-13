@@ -16,8 +16,9 @@ export class SearchInputComponent implements OnInit {
   options: Options[];
   searchParameter: string;
   searchText: string;
-  url = 'api/files';
+  url = 'http://localhost:8090/api/files';
   archive: Archive[];
+  archiveBody: Archive;
 
   constructor(private httpService: HttpService) {
     this.options = [{
@@ -40,6 +41,8 @@ export class SearchInputComponent implements OnInit {
         'name': 'Группа',
         'param': 'group'
       }] as Options[];
+    this.searchText='';
+    this.searchParameter='title';
   }
 
   ngOnInit() {
@@ -47,8 +50,8 @@ export class SearchInputComponent implements OnInit {
 
   submit(action) {
     const param = new URLSearchParams();
-    param.set(this.searchParameter, this.searchText);
-    this.httpService.getData(this.url + this.searchParameter, param)
+    param.set(this.searchParameter, this.searchText.toString());
+    this.httpService.getData(this.url + '/'+this.searchParameter, param.toString())
       .map(resp => resp.json() as Archive[])
       .subscribe((data) => {
           this.archive = data;
@@ -57,6 +60,7 @@ export class SearchInputComponent implements OnInit {
           console.log(error);
         });
   }
+
 
   getOption(value) {
     this.searchParameter = value;

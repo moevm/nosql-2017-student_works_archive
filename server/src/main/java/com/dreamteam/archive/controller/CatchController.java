@@ -2,6 +2,10 @@ package com.dreamteam.archive.controller;
 
 import com.dreamteam.archive.model.Archive;
 import com.dreamteam.archive.service.catchservice.CatchService;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.convert.ReadingConverter;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.List;
+
 
 @RestController
 @RequestMapping(value="/api/files")
@@ -27,10 +34,11 @@ public class CatchController {
     public ResponseEntity<?> getQuery(@RequestParam("grade")String grade){
         return new ResponseEntity<List<Archive>>(catchService.getByGrade(grade), HttpStatus.OK);
     }
+
     @GetMapping
     @RequestMapping(value="/title")
     public ResponseEntity<?> getTitle(@RequestParam("title")String title){
-        return new ResponseEntity<List<Archive>>(catchService.getByTitle(title), HttpStatus.OK);
+        return new ResponseEntity<List<Archive>>(catchService.getByTitle(URLDecoder.decode(title)), HttpStatus.OK);
     }
     @GetMapping
     @RequestMapping(value="/date")
@@ -46,17 +54,17 @@ public class CatchController {
     @GetMapping
     @RequestMapping(value="/subject")
     public ResponseEntity<?> getQuerySubject(@RequestParam("subject")String subject){
-        return new ResponseEntity<List<Archive>>(catchService.getBySubject(subject), HttpStatus.OK);
+        return new ResponseEntity<List<Archive>>(catchService.getBySubject(URLDecoder.decode(subject)), HttpStatus.OK);
     }
     @GetMapping
     @RequestMapping(value="/teacherName")
     public ResponseEntity<?> getQueryTeacherName(@RequestParam("teacherName")String teacherName){
-        return new ResponseEntity<List<Archive>>(catchService.getByTeacherName(teacherName), HttpStatus.OK);
+        return new ResponseEntity<List<Archive>>(catchService.getByTeacherName(URLDecoder.decode(teacherName)), HttpStatus.OK);
     }
     @GetMapping
     @RequestMapping(value="/studentName")
     public ResponseEntity<?> getQueryStudentName(@RequestParam("studentName")String studentName){
-        return new ResponseEntity<List<Archive>>(catchService.getByStudentName(studentName), HttpStatus.OK);
+        return new ResponseEntity<List<Archive>>(catchService.getByStudentName(URLDecoder.decode(studentName)), HttpStatus.OK);
     }
     @GetMapping
     @RequestMapping(value="/group")
