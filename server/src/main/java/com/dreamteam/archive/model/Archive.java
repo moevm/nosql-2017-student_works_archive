@@ -19,7 +19,7 @@ public class Archive implements Serializable{
     private String id;
     private String title;
     private String subject;
-    private int grade;
+    private String grade;
     private String teacherName;
     private String studentId;
     private String studentName;
@@ -28,7 +28,7 @@ public class Archive implements Serializable{
     private String date;
     Archive(){}
 
-    Archive(String title, String subject, int grade,String date, String teacherName, String studentId, String studentName, String group, String file){
+    Archive(String title, String subject, String grade,String date, String teacherName, String studentId, String studentName, String group, String file){
         this.title=title;
         this.subject=subject;
         this.grade=grade;
@@ -57,11 +57,11 @@ public class Archive implements Serializable{
         this.subject = subject;
     }
 
-    public int getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 

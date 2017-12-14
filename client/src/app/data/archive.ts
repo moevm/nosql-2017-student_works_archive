@@ -2,7 +2,7 @@ export class Archive {
   id: string;
   title: string;
   subject: string;
-  grade: number;
+  grade: string;
   teacherName: string;
   studentId: string;
   studentName: string;

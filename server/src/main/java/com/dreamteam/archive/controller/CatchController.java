@@ -25,10 +25,11 @@ public class CatchController {
 
     @PostMapping
     @RequestMapping()
-    public ResponseEntity<?> getQueryGroup(@RequestBody Map<String, String>  json)  {
+    @ResponseBody
+    public ResponseEntity<?> getQueryGroup(@RequestBody Archive json)  {
         Map p=new HashMap<String, String>();
         p.put("group","4383");
-        System.out.println(json);
+        System.out.println(json.getDate()+"123");
         return new ResponseEntity<List<Archive>>(catchService.getFind(p), HttpStatus.OK);
     }
 }

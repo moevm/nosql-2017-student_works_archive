@@ -43,18 +43,30 @@ export class SearchInputComponent implements OnInit {
       }] as Options[];
     this.searchText='';
     this.searchParameter='title';
+    this.archiveBody=new Archive();
+    this.archiveBody.title="12";
+    this.archiveBody.group="4383";
+    console.log(this.archiveBody);
   }
 
   ngOnInit() {
   }
 
   submit(action) {
-    const param = new URLSearchParams();
-    param.set(this.searchParameter, this.searchText.toString());
-    this.httpService.getData(this.url + '/'+this.searchParameter, param.toString())
-      .map(resp => resp.json() as Archive[])
+    // const param = new URLSearchParams();
+    // param.set(this.searchParameter, this.searchText.toString());
+    // this.httpService.getData(this.url + '/'+this.searchParameter, param.toString())
+    //   .map(resp => resp.json() as Archive[])
+    //   .subscribe((data) => {
+    //       this.archive = data;
+    //     },
+    //     error => {
+    //       console.log(error);
+    //     });
+    this.httpService.postBody(JSON.stringify(this.archiveBody), this.url)
+      //.map(resp => resp.json() as Archive[])
       .subscribe((data) => {
-          this.archive = data;
+          console.log(data);
         },
         error => {
           console.log(error);
