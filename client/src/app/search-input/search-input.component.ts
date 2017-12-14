@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Options} from '../data/options';
-import {HttpService} from "../service/http.service";
+import {HttpService} from "../service/http/http.service";
 import {Archive} from "../data/archive";
 import "rxjs/add/operator/map";
 

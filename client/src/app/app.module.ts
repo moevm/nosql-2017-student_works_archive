@@ -9,6 +9,7 @@ import { OutputSearchDataComponent } from './output-search-data/output-search-da
 import {RouterModule} from "@angular/router";
 import { DescriptionComponent } from './description/description.component';
 import {routes} from "./route";
+import {SharedService} from "./service/shared/shared.service";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import {routes} from "./route";
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
