@@ -7,4 +7,5 @@ import java.util.Map;
 
 public interface CatchService {
     List<Archive> getFind(Map<String,String> json);
+    List<?> getStatistic(Map<String,String> json);
 }

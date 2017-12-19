@@ -3,6 +3,8 @@ package com.dreamteam.archive.service.catchservice;
 import com.dreamteam.archive.model.Archive;
 import com.dreamteam.archive.persistance.CatchRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -23,7 +25,12 @@ public class CatchServiceImpl implements CatchService {
         Pattern studentName=(json.get("studentName")==null)?Pattern.compile("."):Pattern.compile((String)json.get("studentName"));
         Pattern group=(json.get("group")==null)?Pattern.compile("."):Pattern.compile((String)json.get("group"));
         Pattern date=(json.get("date")==null)?Pattern.compile("."):Pattern.compile((String)json.get("date"));
-        System.out.println("Привет2");
         return catchRepository.find(title,subject,grade,teacherName,studentId,studentName,group,date);
     }
+    public List<?> getStatistic(Map<String,String> json){
+        List<Archive> result = getFind(json);
+        return (new ArrayList<Integer>());
+    }
+
+
 }

@@ -30,4 +30,13 @@ public class CatchController {
         return new ResponseEntity<List<Archive>>(catchService.getFind(p), HttpStatus.OK);
 
     }
+    @PostMapping
+    @RequestMapping(value="/statistic")
+    public ResponseEntity<?> getStatistic(@RequestBody Map<String, String>  json)  {
+        Map p=new HashMap<String, String>();
+        p.put("group","4383");
+        System.out.println(json);
+        return new ResponseEntity<List<Archive>>(catchService.getStatistic(p), HttpStatus.OK);
+
+    }
 }
