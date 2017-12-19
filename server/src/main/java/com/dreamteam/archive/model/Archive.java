@@ -1,5 +1,4 @@
 package com.dreamteam.archive.model;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -26,13 +25,10 @@ public class Archive implements Serializable{
     private String studentName;
     private String group;
     private String file;
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
-    private LocalDateTime date;
+    private String date;
     Archive(){}
 
-    Archive(String title, String subject, int grade,LocalDateTime date, String teacherName, String studentId, String studentName, String group, String file){
+    Archive(String title, String subject, int grade,String date, String teacherName, String studentId, String studentName, String group, String file){
         this.title=title;
         this.subject=subject;
         this.grade=grade;
@@ -109,11 +105,11 @@ public class Archive implements Serializable{
         this.file = file;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
