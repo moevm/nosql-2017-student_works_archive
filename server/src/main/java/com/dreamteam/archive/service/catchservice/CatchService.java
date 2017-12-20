@@ -7,4 +7,5 @@ import java.util.Map;
 
 public interface CatchService {
     List<Archive> getFind(Map<String,String> json);
+    List<?> getStatisticPercentOfGrades(Map<String,String> json);
 }

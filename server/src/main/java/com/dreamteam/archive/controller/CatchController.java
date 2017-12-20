@@ -28,4 +28,13 @@ public class CatchController {
         System.out.println(json);
         return new ResponseEntity<List<Archive>>(catchService.getFind(p), HttpStatus.OK);
     }
+    @PostMapping
+    @RequestMapping(value="/statisticPercentOfGrades")
+    public ResponseEntity<?> getStatistic(@RequestBody Map<String, String>  json)  {
+        Map p=new HashMap<String, String>();
+        p.put("group","4383");
+        System.out.println(json);
+        return new ResponseEntity<List<Archive>>(catchService.getStatisticPercentOfGrades(p), HttpStatus.OK);
+
+    }
 }
