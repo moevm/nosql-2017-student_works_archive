@@ -23,3 +23,4 @@ gradlew*
 *.html
 *.xml
 *.iml
+workspace.xml
