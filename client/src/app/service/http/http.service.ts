@@ -20,4 +20,10 @@ export class HttpService {
       .map(resp => resp.json() as Archive[]);
     // .catch((error: any) => Observable.throw(error));
   }
+
+  postStat(params: any, url: string) {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post(url,  params)
+    // .catch((error: any) => Observable.throw(error));
+  }
 }

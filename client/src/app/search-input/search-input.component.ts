@@ -16,7 +16,7 @@ export class SearchInputComponent implements OnInit {
   options: Options[];
   searchParameter: string;
   searchText: string;
-  url = 'http://localhost:8090/api/files';
+  url = 'http://localhost:8090/api/files/find';
   archive: Archive[];
   archiveBody: Archive;
 
@@ -58,4 +58,5 @@ export class SearchInputComponent implements OnInit {
   setText(value) {
     this.searchText = value;
   }
+
 }
