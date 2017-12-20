@@ -24,29 +24,20 @@ public class CatchController {
     }
 
     @PostMapping
-    @RequestMapping()
-    public ResponseEntity<?> getQueryGroup(@RequestBody String json)  {
-        Map p=new HashMap<String, String>();
-        p.put("date","2017");
-        System.out.println(json);
-        return new ResponseEntity<List<Archive>>(catchService.getFind(p), HttpStatus.OK);
+    @RequestMapping("/find")
+    public ResponseEntity<?> getQueryGroup(@RequestBody Map<String, String> json)  {
+        return new ResponseEntity<List<Archive>>(catchService.getFind(json), HttpStatus.OK);
     }
     @PostMapping
     @RequestMapping("/statisticPercentOfGrades")
-    public ResponseEntity<?> getStatisticPercentOfGrades(@RequestBody String json)  {
-        Map p=new HashMap<String, String>();
-        p.put("group","4383");
-        System.out.println(json);
-        return new ResponseEntity<List<StatisticPercentOfGrades>>(catchService.getStatisticPercentOfGrades(p), HttpStatus.OK);
+    public ResponseEntity<?> getStatisticPercentOfGrades(@RequestBody Map<String, String> json)  {
+        return new ResponseEntity<List<StatisticPercentOfGrades>>(catchService.getStatisticPercentOfGrades(json), HttpStatus.OK);
 
     }
     @PostMapping
     @RequestMapping("/statisticSubjectGrades")
-    public ResponseEntity<?> getStatisticSubjectGrades(@RequestBody String json)  {
-        Map p=new HashMap<String, String>();
-        p.put("group","4383");
-        System.out.println(json);
-        return new ResponseEntity<List<StatisticSubjectGrades>>(catchService.getStatisticSubjectGrades(p), HttpStatus.OK);
+    public ResponseEntity<?> getStatisticSubjectGrades(@RequestBody Map<String, String> json)  {
+        return new ResponseEntity<List<StatisticSubjectGrades>>(catchService.getStatisticSubjectGrades(json), HttpStatus.OK);
 
     }
 }
