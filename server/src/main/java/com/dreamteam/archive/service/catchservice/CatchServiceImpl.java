@@ -1,10 +1,12 @@
 package com.dreamteam.archive.service.catchservice;
 
 import com.dreamteam.archive.model.Archive;
+import com.dreamteam.archive.model.StatisticPercentOfGrades;
 import com.dreamteam.archive.persistance.CatchRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -27,10 +29,34 @@ public class CatchServiceImpl implements CatchService {
         Pattern date=(json.get("date")==null)?Pattern.compile("."):Pattern.compile((String)json.get("date"));
         return catchRepository.find(title,subject,grade,teacherName,studentId,studentName,group,date);
     }
-    public List<?> getStatistic(Map<String,String> json){
-        List<Archive> result = getFind(json);
-        return (new ArrayList<Integer>());
-    }
+    public List<StatisticPercentOfGrades> getStatisticPercentOfGrades(Map<String,String> json){
+        List<StatisticPercentOfGrades> result = new ArrayList<>(3);
+        result.get(0).setGrade("3");
+        result.get(1).setGrade("4");
+        result.get(2).setGrade("5");
 
+        Integer sizeOfGroup = 0;
+        List<Integer> count = Arrays.asList(0,0,0);
+
+        for (Archive item : this.getFind(json)) {
+            if (item.getGrade().equals("3")){
+                count.set(0,count.get(0)+1);
+            }
+            if (item.getGrade().equals("4")){
+                count.set(1,count.get(1)+1);
+            }
+            if (item.getGrade().equals("5")){
+                count.set(2,count.get(2)+1);
+            }
+            sizeOfGroup++;
+        }
+        int i = 0;
+        for (StatisticPercentOfGrades item: result){
+            Integer percent = count.get(i)/sizeOfGroup;
+            item.setPercent(percent.toString());
+            i++;
+        }
+        return result;
+    }
 
 }
