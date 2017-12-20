@@ -1,0 +1,36 @@
+.stat-panel{
+  margin-top: 140px;
+}
+
+
+.my-group .input-search{
+  width: 70%;
+}
+.select-search{
+  width: 40%;
+}
+.search-panel{
+  margin-top: 140px ;
+}
+
+
+
+.submit-but:hover{
+  background: #3d7d33;
+  color: white;
+}
+.select-search{
+  background: #66bd8a;
+  color: white;
+  text-align-last: center;
+}
+option{
+  text-align-last: center;
+}
+select>option hover{
+  background: #3d7d33;
+  color: white;
+}
+#lunch{
+  padding: 5px;
+}

@@ -1,0 +1,47 @@
+.my-group .form-control{
+  margin: 0;
+  padding: 0;
+}
+
+.my-group .input-search{
+  width: 70%;
+}
+.my-group .select-search{
+  width: 30%;
+}
+.search-panel{
+  margin-top: 140px ;
+}
+
+.submit-but{
+  width:70%;
+  margin-left: 15%;
+  margin-top: 70px;
+  background: #66bd8a;
+  color: white;
+}
+.input-group{
+  width: 100%;
+}
+
+.submit-but:hover{
+  background: #3d7d33;
+  color: white;
+}
+.select-search{
+  background: #66bd8a;
+  color: white;
+  text-align-last: center;
+}
+option{
+  text-align-last: center;
+}
+select>option hover{
+  background: #3d7d33;
+  color: white;
+}
+#lunch{
+  padding: 5px;
+}
+
+

@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<header class="clearfix">
+  <div class="container">
+    <div class="header-left">
+      <h1>Title</h1>
+    </div>
+    <div class="header-right">
+      <label for="open">
+        <span class="hidden-desktop"></span>
+      </label>
+      <input type="checkbox" name="" id="open">
+      <nav>
+        <a routerLink="search">Поиск</a>
+        <a>Добавление работ</a>
+        <a routerLink="statistics">Просмотр статистики</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<section class="clearfix ">
+  <div class="container layer">
+    <div class="section-left">
+    </div>
+  </div>
+</section>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 main-window">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 ">
+        <label class="header-row">Студенческий архив</label>
+      </div>
+      <div class="row">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+

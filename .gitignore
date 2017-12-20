@@ -1,5 +1,5 @@
 # IntelliJ project files #
-.idea
+.idea/
 classes
 out
 build
@@ -20,6 +20,9 @@ gradlew*
 *.ear
 
 
-*.xml
 *.html
+*.xml
 *.iml
+workspace.xml
+
+client/node_modules
