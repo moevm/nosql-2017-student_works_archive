@@ -65,29 +65,11 @@ public class GridFsServiceImpl implements GridFsService {
         }
     }
     @Override
-    public String retrieveTextFiles(String fileId){
-        /**
-         * get all data files then save to local disk
-         */
-
-        // Retrieve all data files
-        List<GridFSDBFile> textFiles = gridOperations.find(new Query(Criteria.where("metadata.type").is("data")));
-
-        // Save all back to local disk
-        textFiles.forEach(file->{
-
-            try {
-                String fileName = file.getFilename();
-
-                file.writeTo("D:\\JSA\\retrieve\\"+ fileName);
-
-                System.out.println("Text File Name: " + fileName);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        return "Done";
+    public GridFSDBFile retrieveTextFiles(String fileId){
+        System.out.println("Внутри");
+        GridFSDBFile textFiles = gridOperations.findOne(new Query(Criteria.where("_id").is(fileId)));
+        System.out.println(textFiles);
+        return textFiles;
     }
     @Override
     public String deleteFile(String fileId){

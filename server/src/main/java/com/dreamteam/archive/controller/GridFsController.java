@@ -4,6 +4,10 @@ package com.dreamteam.archive.controller;
 import java.util.List;
 import com.data.Archive;
 import com.dreamteam.archive.service.catchservice.GridFsService;
+import com.mongodb.gridfs.GridFSDBFile;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -23,11 +27,13 @@ public class GridFsController {
         return gridFsService.saveFiles(element);
     }
 
-    @PostMapping
-    @RequestMapping("/get")
-    public String retrieveText(@RequestBody String fileId){
-
-        return gridFsService.retrieveTextFiles(fileId);
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    public ResponseEntity<InputStreamResource> retrieveText(@RequestParam(value="file") String fileId){
+        System.out.println("вошел");
+        GridFSDBFile gridFsFile =gridFsService.retrieveTextFiles(fileId);
+        return ResponseEntity.ok()
+                .contentLength(gridFsFile.getLength())
+                .body(new InputStreamResource(gridFsFile.getInputStream()));
     }
 
     @GetMapping("/delete")
