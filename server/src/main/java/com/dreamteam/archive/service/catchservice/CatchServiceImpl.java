@@ -4,6 +4,7 @@ import com.dreamteam.archive.model.Archive;
 import com.dreamteam.archive.model.StatisticPercentOfGrades;
 import com.dreamteam.archive.persistance.CatchRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,6 +58,10 @@ public class CatchServiceImpl implements CatchService {
             i++;
         }
         return result;
+    }
+    @Override
+    public String saveElement(com.data.Archive element, MultipartFile file){
+        return "Done";
     }
 
 }

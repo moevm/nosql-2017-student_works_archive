@@ -3,9 +3,11 @@ package com.dreamteam.archive.controller;
 import com.dreamteam.archive.model.Archive;
 import com.dreamteam.archive.model.StatisticPercentOfGrades;
 import com.dreamteam.archive.service.catchservice.CatchService;
+import com.dreamteam.archive.service.catchservice.GridFsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.Map;
 @RequestMapping(value="/api/files")
 public class CatchController {
     CatchService catchService;
-    //CatchController catchController;
+
     CatchController(CatchService catchService){
         this.catchService =catchService;
         //this.catchController = catchController;
@@ -23,19 +25,13 @@ public class CatchController {
 
     @PostMapping
     @RequestMapping()
-    public ResponseEntity<?> getQueryGroup(@RequestBody String json)  {
-        Map p=new HashMap<String, String>();
-        p.put("date","2017");
-        System.out.println(json);
-        return new ResponseEntity<List<Archive>>(catchService.getFind(p), HttpStatus.OK);
+    public ResponseEntity<?> getQueryGroup(@RequestBody Map<String, String> json)  {
+        return new ResponseEntity<List<Archive>>(catchService.getFind(json), HttpStatus.OK);
     }
     @PostMapping
     @RequestMapping("/statisticPercentOfGrades")
-    public ResponseEntity<?> getStatistic(@RequestBody String json)  {
-        Map p=new HashMap<String, String>();
-        p.put("group","4383");
-        System.out.println(json);
-        return new ResponseEntity<List<StatisticPercentOfGrades>>(catchService.getStatisticPercentOfGrades(p), HttpStatus.OK);
-
+    public ResponseEntity<?> getStatistic(@RequestBody Map<String, String> json)  {
+        return new ResponseEntity<List<StatisticPercentOfGrades>>(catchService.getStatisticPercentOfGrades(json), HttpStatus.OK);
     }
+    
 }

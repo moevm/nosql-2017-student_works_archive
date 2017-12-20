@@ -6,10 +6,7 @@ import com.mongodb.DBObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.gridfs.GridFsOperations;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -19,6 +16,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.gridfs.GridFSDBFile;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class GridFsServiceImpl implements GridFsService {
@@ -27,17 +25,25 @@ public class GridFsServiceImpl implements GridFsService {
 
     // this variable is used to store ImageId for other actions like: findOne or delete
     private String imageFileId = "";
+
     @Override
-    public String saveFiles(List<Archive> element){
+    public String saveFiles(String name,MultipartFile file){
         // Define metaData
+        if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(name + "-uploaded")));
+                stream.write(bytes);
+                stream.close();
+            } catch (Exception e) {
+                return "Вам не удалось загрузить " + name  + " => " + e.getMessage();
+            }
+        } else {
+            return "Вам не удалось загрузить " + name  + " потому что файл пустой.";
+        }
+        System.out.println("Вы удачно загрузили " +name  + " в " + name  + "-uploaded !");
         DBObject metaData = new BasicDBObject();
-        metaData.put("organization", "JavaSampleApproach");
-
-        /**
-         * 1. save an image file to MongoDB
-         */
-
-        // Get input file
         try {
             InputStream iamgeStream = new FileInputStream("D:\\JSA\\jsa-logo.png");
 
@@ -73,8 +79,7 @@ public class GridFsServiceImpl implements GridFsService {
     }
     @Override
     public String deleteFile(String fileId){
-        // delete image via id
         gridOperations.delete(new Query(Criteria.where("_id").is(fileId)));
-       return "Done";
+        return "Done";
     }
 }

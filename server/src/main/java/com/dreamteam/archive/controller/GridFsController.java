@@ -1,7 +1,4 @@
 package com.dreamteam.archive.controller;
-
-
-import java.util.List;
 import com.data.Archive;
 import com.dreamteam.archive.service.catchservice.GridFsService;
 import com.mongodb.gridfs.GridFSDBFile;
@@ -9,6 +6,7 @@ import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @RestController
@@ -20,12 +18,6 @@ public class GridFsController {
         this.gridFsService =gridFsService;
     }
 
-    @PostMapping
-    @RequestMapping("/save")
-    public String save(@RequestBody List<Archive> element) {
-
-        return gridFsService.saveFiles(element);
-    }
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     public ResponseEntity<InputStreamResource> retrieveText(@RequestParam(value="file") String fileId){
