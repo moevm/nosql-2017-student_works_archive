@@ -14,8 +14,10 @@ import java.util.regex.Pattern;
 public class CatchServiceImpl implements CatchService {
 
     CatchRepository catchRepository;
-    CatchServiceImpl(CatchRepository catchRepository){
+    GridFsService gridFsService;
+    CatchServiceImpl(CatchRepository catchRepository,GridFsService gridFsService){
         this.catchRepository = catchRepository;
+        this.gridFsService=gridFsService;
     }
     public List<Archive> getFind(Map<String,String> json){
         Pattern title=(json.get("title")==null)?Pattern.compile("."):Pattern.compile((String)json.get("title"));
@@ -58,14 +60,15 @@ public class CatchServiceImpl implements CatchService {
         return result;
     }
     @Override
-    public String saveElement(com.data.Archive element, MultipartFile file){
+    public String saveElement(Archive element, MultipartFile file){
+
+        catchRepository.save(element);
         return "Done";
     }
 
     public List<StatisticSubjectGrades> getStatisticSubjectGrades(Map<String,String> json){
         Map<String,ArrayList<Integer>> map = new HashMap<>();
         List<StatisticSubjectGrades> result = new ArrayList<>();
-
         for (Archive item : this.getFind(json)) {
             if (map.containsKey(item.getSubject())){
                 ArrayList<Integer> grades = map.get(item.getSubject());
@@ -77,7 +80,6 @@ public class CatchServiceImpl implements CatchService {
                 map.put(item.getSubject(),grades);
             }
         }
-
         for (String key: map.keySet()){
             ArrayList<Integer> grades = map.get(key);
             Double sum = 0.0;
@@ -89,7 +91,6 @@ public class CatchServiceImpl implements CatchService {
             Double aver = sum/count;
             result.add(new StatisticSubjectGrades(key,aver.toString()));
         }
-
         return result;
     }
 
