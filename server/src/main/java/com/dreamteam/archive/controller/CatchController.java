@@ -15,7 +15,6 @@ import java.util.Map;
 public class CatchController {
     CatchService catchService;
     //CatchController catchController;
-
     CatchController(CatchService catchService){
         this.catchService =catchService;
         //this.catchController = catchController;
@@ -23,11 +22,10 @@ public class CatchController {
 
     @PostMapping
     @RequestMapping()
-    public ResponseEntity<?> getQueryGroup(@RequestBody Map<String, String>  json)  {
+    public ResponseEntity<?> getQueryGroup(@RequestBody String json)  {
         Map p=new HashMap<String, String>();
-        p.put("group","4383");
+        p.put("date","2017");
         System.out.println(json);
         return new ResponseEntity<List<Archive>>(catchService.getFind(p), HttpStatus.OK);
-
     }
 }

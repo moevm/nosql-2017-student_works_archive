@@ -23,7 +23,6 @@ public class CatchServiceImpl implements CatchService {
         Pattern studentName=(json.get("studentName")==null)?Pattern.compile("."):Pattern.compile((String)json.get("studentName"));
         Pattern group=(json.get("group")==null)?Pattern.compile("."):Pattern.compile((String)json.get("group"));
         Pattern date=(json.get("date")==null)?Pattern.compile("."):Pattern.compile((String)json.get("date"));
-        System.out.println("Привет2");
         return catchRepository.find(title,subject,grade,teacherName,studentId,studentName,group,date);
     }
 }
