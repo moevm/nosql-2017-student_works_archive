@@ -18,6 +18,9 @@ public class MongoGridFsTemplate  extends AbstractMongoConfiguration{
     @Value("${spring.data.mongodb.database}")
     private String mongoDatabase;
 
+    public MongoGridFsTemplate() {
+    }
+
     @Bean
     public GridFsTemplate gridFsTemplate() throws Exception {
         return new GridFsTemplate(mongoDbFactory(), mappingMongoConverter());
