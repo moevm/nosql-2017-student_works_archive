@@ -24,8 +24,8 @@ export class SearchInputComponent implements OnInit {
     this.searchText = '';
     this.searchParameter = 'title';
     this.archiveBody = new Archive();
-    this.archiveBody.title = '1';
-    this.archiveBody.group = '4383';
+    this.archiveBody.title = null;
+    this.archiveBody.group = null;
     this.archiveBody.id = null;
     this.archiveBody.subject = null;
     this.archiveBody.grade = null;
@@ -34,7 +34,6 @@ export class SearchInputComponent implements OnInit {
     this.archiveBody.studentName = null;
     this.archiveBody.file = null;
     this.archiveBody.date = null;
-    console.log(this.archiveBody);
   }
 
   ngOnInit() {
