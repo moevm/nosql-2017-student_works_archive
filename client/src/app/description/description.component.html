@@ -1,0 +1,48 @@
+<form class="form-group" name="myForm" xmlns:date="http://www.w3.org/1999/xhtml">
+  <div class="row search-panel">
+    <div class="col-md-12">
+      <div class="search col-md-8 col-md-offset-2">
+        <div class="input-group my-group">
+          <output class="selectpicker form-control select-search" data-live-search="true">Название
+          </output>
+          <input type="text" class="form-control input-search" name="snpid"
+                 name="serch-text" [disabled]="true" value={{archive.title}}/>
+        </div>
+        <div class="input-group my-group">
+          <output class="selectpicker form-control select-search" data-live-search="true">Студент
+          </output>
+          <input type="text" class="form-control input-search" name="snpid"
+                 name="serch-text" [disabled]="true" value={{archive.studentName}}/>
+        </div>
+        <div class="input-group my-group">
+          <output class="selectpicker form-control select-search" data-live-search="true">Преподаватель
+          </output>
+          <input type="text" class="form-control input-search" name="snpid"
+                 name="serch-text" [disabled]="true"  value={{archive.teacherName}}/>
+        </div>
+        <div class="input-group my-group">
+          <output class="selectpicker form-control select-search" data-live-search="true">Предмет
+          </output>
+          <input type="text" class="form-control input-search" name="snpid"
+                 name="serch-text" [disabled]="true" value={{archive.subject}}/>
+        </div>
+        <div class="input-group my-group">
+          <output class="selectpicker form-control select-search" data-live-search="true">Оценка
+          </output>
+          <input type="text" class="form-control input-search" name="snpid"
+                 name="serch-text" [disabled]="true" value={{archive.grade}}/>
+        </div>
+        <div class="input-group my-group">
+          <output class="selectpicker form-control select-search" data-live-search="true">Дата сдачи
+          </output>
+          <input type="text" class="form-control input-search" name="snpid"
+                 name="serch-text" [disabled]="true" value="{{archive.date| date: 'd.M.yy'}}"/>
+        </div>
+        <button class="btn btn-default my-group-button submit-but" type="submit" (click)="getText()">Посмотреть текст работы</button>
+
+      </div>
+    </div>
+  </div>
+</form>
+
+

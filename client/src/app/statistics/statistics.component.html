@@ -1,0 +1,42 @@
+<form class="form-group" name="myForm">
+  <div class="row stat-panel">
+    <div class="col-md-12">
+      <div class="search col-md-8 col-md-offset-2">
+        <label>Группа:</label>
+        <select id="lunch" class="selectpicker select-search" data-live-search="true" (change)="getGroupStat($event.target.value)">
+          <option>4383</option>
+          <option>4381</option>
+          <option>4362</option>
+        </select>
+        <div>
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+        <label>Предмет:</label>
+        <select id="lunch" class="selectpicker select-search" data-live-search="true" (click)="getSubStat($event.target.value)">
+            <option>Параллельные алгоритмы</option>
+            <option>Разработка программного обеспечения</option>
+        </select>
+        <div style="display: block">
+          <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+

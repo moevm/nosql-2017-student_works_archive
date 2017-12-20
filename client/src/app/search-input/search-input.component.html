@@ -1,0 +1,57 @@
+<form class="form-group" name="myForm">
+  <div class="row search-panel">
+    <div class="col-md-12">
+      <div class="search col-md-8 col-md-offset-2">
+        <div class="input-group my-group">
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            Название
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.title"/>
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            Предмет
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.subject"/>
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            Имя преподавателя
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.teacherName"/>
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            Имя студента
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.studentName"/>
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            Дата
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.date"/>
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            Группа
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.group"/>
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            № Студента
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.studentId"/>
+          <output id="lunch" class="selectpicker form-control select-search" data-live-search="true">
+            Оценка
+          </output>
+          <input type="text" class="form-control input-search" name="snpid" placeholder="Поиск..."
+                 name="serch-text" [(ngModel)]="archiveBody.grade"/>
+          <button class="btn btn-default my-group-button submit-but" type="submit" (click)="submit()">Найти</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 ">
+    <app-output-search-data *ngIf="archive" [archiveFiles]="archive"></app-output-search-data>
+  </div>
+</div>

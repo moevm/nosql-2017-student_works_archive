@@ -1,0 +1,10 @@
+<div class="data">
+  <div class="row data" *ngFor="let file of archiveFiles" routerLink="/description" (click)="setArchive(file)">
+    <div>{{file?.title}}
+      {{file?.subject}}
+      {{file?.studentName}}
+      {{file?.date | date: 'd.M.yy'}}
+    </div>
+  </div>
+</div>
+
