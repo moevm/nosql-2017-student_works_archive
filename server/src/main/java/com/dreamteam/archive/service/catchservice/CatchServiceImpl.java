@@ -30,15 +30,13 @@ public class CatchServiceImpl implements CatchService {
         return catchRepository.find(title,subject,grade,teacherName,studentId,studentName,group,date);
     }
     public List<StatisticPercentOfGrades> getStatisticPercentOfGrades(Map<String,String> json){
-        System.out.println("1");
         List<StatisticPercentOfGrades> result = new ArrayList<>(3);
-        result.get(0).setGrade("3");
-        result.get(1).setGrade("4");
-        result.get(2).setGrade("5");
-        System.out.println("2");
-        Integer sizeOfGroup = 0;
+        for (Integer i = 3; i <= 5; i++){
+            result.add(new StatisticPercentOfGrades(i.toString()));
+        }
+        Double sizeOfGroup = 0.0;
         List<Integer> count = Arrays.asList(0,0,0);
-        System.out.println("3");
+
         for (Archive item : this.getFind(json)) {
             if (item.getGrade().equals("3")){
                 count.set(0,count.get(0)+1);
@@ -51,15 +49,13 @@ public class CatchServiceImpl implements CatchService {
             }
             sizeOfGroup++;
         }
-        System.out.println("4");
+
         int i = 0;
         for (StatisticPercentOfGrades item: result){
-            Integer percent = count.get(i)/sizeOfGroup*100;
+            Double percent = (Double) (count.get(i)/sizeOfGroup*100);
             item.setPercent(percent.toString());
             i++;
         }
-        System.out.println("5");
-        //System.out.println(result);
         return result;
     }
 
