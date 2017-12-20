@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="595a1768-8b0b-41cd-a909-3a05517f78c8" name="Default" comment="Methods to statistic">
-      <change beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/model/StatisticPercentOfGrades.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/nosql_2017_student_works_archive_war.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/nosql_2017_student_works_archive_war_exploded.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/studentArchive_war.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/studentArchive_war_exploded.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/studentsArchive_war.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/studentsArchive_war_exploded.xml" afterPath="" />
+    <list default="true" id="595a1768-8b0b-41cd-a909-3a05517f78c8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/config/MongoGridFsTemplate.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/config/MongoGridFsTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/controller/CatchController.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/controller/CatchController.java" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/service/catchservice/CatchService.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/service/catchservice/CatchService.java" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/service/catchservice/CatchServiceImpl.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/service/catchservice/CatchServiceImpl.java" />
     </list>
     <ignored path="nosql-2017-student_works_archive.iws" />
@@ -99,8 +89,8 @@
       <file leaf-file-name="CatchServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/service/catchservice/CatchServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+            <state relative-caret-position="425">
+              <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -944,7 +934,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511376921396</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Methods to statistic">
+      <created>1513776654046</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513776654046</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1003,6 +1000,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Spring is here!" />
     <MESSAGE value="Methods to statistic" />
     <option name="LAST_COMMIT_MESSAGE" value="Methods to statistic" />
@@ -1193,8 +1191,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/dreamteam/archive/service/catchservice/CatchServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+        <state relative-caret-position="425">
+          <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
           <folding />
         </state>
       </provider>

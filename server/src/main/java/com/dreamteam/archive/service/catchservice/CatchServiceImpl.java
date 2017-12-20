@@ -52,7 +52,7 @@ public class CatchServiceImpl implements CatchService {
         }
         int i = 0;
         for (StatisticPercentOfGrades item: result){
-            Integer percent = count.get(i)/sizeOfGroup;
+            Integer percent = count.get(i)/sizeOfGroup*100;
             item.setPercent(percent.toString());
             i++;
         }
