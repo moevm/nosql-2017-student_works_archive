@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Archive} from '../../data/archive';
-import {Headers, Http, Response} from '@angular/http';
+import {Headers, Http, Response, ResponseContentType} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
@@ -25,5 +25,9 @@ export class HttpService {
     const headers = new Headers({'Content-Type': 'application/json'});
     return this.http.post(url,  params)
     // .catch((error: any) => Observable.throw(error));
+  }
+
+  getText(url: string,params: string){
+    return this.http.get(url,{params, responseType: ResponseContentType.Blob});
   }
 }
