@@ -67,8 +67,8 @@ public class WorkWithMongo {
             GridFS gfsPhoto = new GridFS(db, "fs");
             GridFSInputFile gfsFile = gfsPhoto.createFile(file);
             gfsFile.setId(student.getId());
-            gfsFile.setFilename(student.getStudentId()+student.getSubject()+student.getTitle());
-            gfsFile.setContentType(student.getFile().substring(student.getFile().lastIndexOf('.'),student.getFile().length()));
+            gfsFile.setFilename(student.getFile().split("\\\\")[student.getFile().split("\\\\").length-1]);
+            gfsFile.setContentType("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
             gfsFile.save();
             // записываем данные в коллекцию/таблицу
             tableStud.insert(document);

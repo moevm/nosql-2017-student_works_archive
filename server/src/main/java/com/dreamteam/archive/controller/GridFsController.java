@@ -29,10 +29,10 @@ public class GridFsController {
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     public ResponseEntity<InputStreamResource> retrieveText(@RequestParam(value="file") String fileId){
-        System.out.println("вошел");
         GridFSDBFile gridFsFile =gridFsService.retrieveTextFiles(fileId);
         return ResponseEntity.ok()
                 .contentLength(gridFsFile.getLength())
+                .contentType(MediaType.parseMediaType(gridFsFile.getContentType()))
                 .body(new InputStreamResource(gridFsFile.getInputStream()));
     }
 

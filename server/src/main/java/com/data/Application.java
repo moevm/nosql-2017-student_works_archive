@@ -18,34 +18,34 @@ public class Application {
         prop.setProperty("Archive", "Archive");
         WorkWithMongo mongo = new WorkWithMongo(prop);
         Archive student = new Archive("Лабораторная работа 1","Параллельные алгоритмы","4",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Миронов Владимир Владимирович",
-                "438309","Сидоров Владимир Егорович","4383","d:\\Lab1.doc");
+                "438309","Сидоров Владимир Егорович","4383","d:\\Lab1.docx");
         mongo.addElement(student);
         student = new Archive("Лабораторная работа 2","Параллельные алгоритмы","4",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Миронов Владимир Владимирович",
-                "438309","Сидоров Владимир Егорович","4383","d:\\Lab2.doc");
+                "438309","Сидоров Владимир Егорович","4383","d:\\Lab2.docx");
         mongo.addElement(student);
         student = new Archive("Лабораторная работа 2","Разработка программного обеспечения","5",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Фролов Виктор Иванович",
-                "438309","Сидоров Владимир Егорович","4383","d:\\Lab3.doc");
+                "438309","Сидоров Владимир Егорович","4383","d:\\Lab3.docx");
         mongo.addElement(student);
 
 
         student = new Archive("Лабораторная работа 3","Параллельные алгоритмы","3",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Миронов Владимир Владимирович",
-                "438115","Егоров Павел Юобевич","4381","d:\\Lab4.doc");
+                "438115","Егоров Павел Юобевич","4381","d:\\Lab4.docx");
         mongo.addElement(student);
         student = new Archive("Лабораторная работа 2","Параллельные алгоритмы","4",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Миронов Владимир Владимирович",
-                "438115","Егоров Павел Юобевич","4381","d:\\Lab5.doc");
+                "438115","Егоров Павел Юобевич","4381","d:\\Lab5.docx");
         mongo.addElement(student);
         student = new Archive("Лабораторная работа 2","Разработка программного обеспечения","4",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Фролов Виктор Иванович",
-                "438115","Егоров Павел Юобевич","4381","d:\\Lab6.doc");
+                "438115","Егоров Павел Юобевич","4381","d:\\Lab6.docx");
         mongo.addElement(student);
 
         student = new Archive("Лабораторная работа 1","Параллельные алгоритмы","5",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Миронов Владимир Владимирович",
-                "436211","Клен Елизавета Павловна","4362","d:\\Lab1.doc");
+                "436211","Клен Елизавета Павловна","4362","d:\\Lab1.docx");
         mongo.addElement(student);
         student = new Archive("Лабораторная работа 3","Параллельные алгоритмы","5",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Миронов Владимир Владимирович",
-                "436211","Клен Елизавета Павловна","4362","d:\\Lab2.doc");
+                "436211","Клен Елизавета Павловна","4362","d:\\Lab2.docx");
         mongo.addElement(student);
         student = new Archive("Лабораторная работа 3","Разработка программного обеспечения","5",LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE),"Фролов Виктор Иванович",
-                "436211","Клен Елизавета Павловна","4362","d:\\Lab3.doc");
+                "436211","Клен Елизавета Павловна","4362","d:\\Lab3.docx");
         mongo.addElement(student);
     }
 }
