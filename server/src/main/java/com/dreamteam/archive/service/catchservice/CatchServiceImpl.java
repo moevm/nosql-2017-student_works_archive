@@ -2,13 +2,11 @@ package com.dreamteam.archive.service.catchservice;
 
 import com.dreamteam.archive.model.Archive;
 import com.dreamteam.archive.model.StatisticPercentOfGrades;
+import com.dreamteam.archive.model.StatisticSubjectGrades;
 import com.dreamteam.archive.persistance.CatchRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 
 @Service
@@ -56,6 +54,37 @@ public class CatchServiceImpl implements CatchService {
             item.setPercent(percent.toString());
             i++;
         }
+        return result;
+    }
+
+    public List<StatisticSubjectGrades> getStatisticSubjectGrades(Map<String,String> json){
+        Map<String,ArrayList<Integer>> map = new HashMap<>();
+        List<StatisticSubjectGrades> result = new ArrayList<>();
+
+        for (Archive item : this.getFind(json)) {
+            if (map.containsKey(item.getSubject())){
+                ArrayList<Integer> grades = map.get(item.getSubject());
+                grades.add(Integer.parseInt(item.getGrade()));
+            }
+            else{
+                ArrayList<Integer> grades = new ArrayList<>();
+                grades.add(Integer.parseInt(item.getGrade()));
+                map.put(item.getSubject(),grades);
+            }
+        }
+
+        for (String key: map.keySet()){
+            ArrayList<Integer> grades = map.get(key);
+            Double sum = 0.0;
+            int count = 0;
+            for (Integer item: grades){
+                sum+=item;
+                count++;
+            }
+            Double aver = sum/count;
+            result.add(new StatisticSubjectGrades(key,aver.toString()));
+        }
+
         return result;
     }
 

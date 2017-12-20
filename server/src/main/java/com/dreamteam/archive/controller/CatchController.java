@@ -2,6 +2,7 @@ package com.dreamteam.archive.controller;
 
 import com.dreamteam.archive.model.Archive;
 import com.dreamteam.archive.model.StatisticPercentOfGrades;
+import com.dreamteam.archive.model.StatisticSubjectGrades;
 import com.dreamteam.archive.service.catchservice.CatchService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -31,11 +32,20 @@ public class CatchController {
     }
     @PostMapping
     @RequestMapping("/statisticPercentOfGrades")
-    public ResponseEntity<?> getStatistic(@RequestBody String json)  {
+    public ResponseEntity<?> getStatisticPercentOfGrades(@RequestBody String json)  {
         Map p=new HashMap<String, String>();
         p.put("group","4383");
         System.out.println(json);
         return new ResponseEntity<List<StatisticPercentOfGrades>>(catchService.getStatisticPercentOfGrades(p), HttpStatus.OK);
+
+    }
+    @PostMapping
+    @RequestMapping("/statisticSubjectGrades")
+    public ResponseEntity<?> getStatisticSubjectGrades(@RequestBody String json)  {
+        Map p=new HashMap<String, String>();
+        p.put("group","4383");
+        System.out.println(json);
+        return new ResponseEntity<List<StatisticSubjectGrades>>(catchService.getStatisticSubjectGrades(p), HttpStatus.OK);
 
     }
 }
