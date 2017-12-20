@@ -21,31 +21,19 @@ export class SearchInputComponent implements OnInit {
   archiveBody: Archive;
 
   constructor(private httpService: HttpService) {
-    this.options = [{
-      'name': 'Название',
-      'param': 'title'
-    },
-      {
-        'name': 'Студент',
-        'param': 'studentName'
-      },
-      {
-        'name': 'Преподаватель',
-        'param': 'teacherName'
-      },
-      {
-        'name': 'Предмет',
-        'param': 'subject'
-      },
-      {
-        'name': 'Группа',
-        'param': 'group'
-      }] as Options[];
-    this.searchText='';
-    this.searchParameter='title';
-    this.archiveBody=new Archive();
-    this.archiveBody.title="12";
-    this.archiveBody.group="4383";
+    this.searchText = '';
+    this.searchParameter = 'title';
+    this.archiveBody = new Archive();
+    this.archiveBody.title = '1';
+    this.archiveBody.group = '4383';
+    this.archiveBody.id = null;
+    this.archiveBody.subject = null;
+    this.archiveBody.grade = null;
+    this.archiveBody.teacherName = null;
+    this.archiveBody.studentId = null;
+    this.archiveBody.studentName = null;
+    this.archiveBody.file = null;
+    this.archiveBody.date = null;
     console.log(this.archiveBody);
   }
 
@@ -53,20 +41,9 @@ export class SearchInputComponent implements OnInit {
   }
 
   submit(action) {
-    // const param = new URLSearchParams();
-    // param.set(this.searchParameter, this.searchText.toString());
-    // this.httpService.getData(this.url + '/'+this.searchParameter, param.toString())
-    //   .map(resp => resp.json() as Archive[])
-    //   .subscribe((data) => {
-    //       this.archive = data;
-    //     },
-    //     error => {
-    //       console.log(error);
-    //     });
-    this.httpService.postBody(JSON.stringify(this.archiveBody), this.url)
-      //.map(resp => resp.json() as Archive[])
+    this.httpService.postBody(this.archiveBody, this.url)
       .subscribe((data) => {
-          console.log(data);
+          this.archive = data;
         },
         error => {
           console.log(error);
