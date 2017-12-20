@@ -23,5 +23,6 @@ gradlew*
 *.html
 *.xml
 *.iml
+workspace.xml
 
 client/node_modules
